@@ -16,6 +16,6 @@ function process(matches)
     end
 end
 
-TTSCR['aliases']:add([==[^#\d+ .*$]==]), function(m) process(m) end)
+TTSCR['aliases']:add([==[^#\d+ .*$]==], function(m) process(m) end)
 
 blight.output("... --> tintin style completion loaded")
