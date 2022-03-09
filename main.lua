@@ -10,12 +10,12 @@ else
 end
 
 function process(matches)
-    local count = tonumber(matches[2])
+    count = tonumber(matches[2])
     for i = 0, count do
         mud.send(matches[3])
     end
 end
 
-TTSCR['aliases']:add([==[^#\d+ .*$]==], function(m) process(m) end)
+TTSCR['aliases']:add([==[^#\d+ .*$]==], process)
 
 blight.output("... --> tintin style completion loaded")
