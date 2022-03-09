@@ -11,7 +11,7 @@ end
 
 function TTSCRprocess(matches)
     count = tonumber(matches[2])
-    for i = 0, count do
+    for i = 1, count do
         mud.send(matches[3])
     end
 end
