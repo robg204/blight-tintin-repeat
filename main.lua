@@ -9,13 +9,13 @@ else
     TTSCR['aliases'] = alias.add_group()
 end
 
-function process(matches)
+function TTSCRprocess(matches)
     count = tonumber(matches[2])
     for i = 0, count do
         mud.send(matches[3])
     end
 end
 
-TTSCR['aliases']:add([==[^#\d+ .*$]==], process)
+TTSCR['aliases']:add([==[^#\d+ .*$]==], TTSCRprocess)
 
 blight.output("... --> tintin style completion loaded")
