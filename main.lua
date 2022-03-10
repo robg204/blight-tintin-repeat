@@ -16,7 +16,7 @@ function TTSCRprocess(matches)
     input = matches[3]
     cmds = {}
 
-    for v in str:gmatch("([^;]+)", input) do
+    for v in input:gmatch("([^;]+)") do
         table.insert(cmds, v)
     end
 
