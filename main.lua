@@ -13,10 +13,10 @@ end
 
 function TTSCRprocess(matches)
     count = tonumber(matches[2])
-    string = matches[3]
+    input = matches[3]
     cmds = {}
 
-    for v in str:gmatch("([^;]+)") do
+    for v in str:gmatch("([^;]+)", input) do
         table.insert(cmds, v)
     end
 
