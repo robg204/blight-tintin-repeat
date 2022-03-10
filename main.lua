@@ -9,10 +9,22 @@ else
     TTSCR['aliases'] = alias.add_group()
 end
 
+-- for w in str:gmatch("([^,]+)") do print(w) end
+
 function TTSCRprocess(matches)
     count = tonumber(matches[2])
+    string = matches[3]
+    cmds = {}
+
+    for v in str:gmatch("([^;]+)") do
+        table.insert(cmds, v)
+    end
+
+
     for i = 1, count do
-        mud.send(matches[3])
+        for _,v in ipairs(cmds) do
+            mud.send(v)
+        end
     end
 end
 
